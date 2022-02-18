@@ -12,7 +12,7 @@ $httpObj->setRequestMethod('POST');
 
 $httpObj->setPayLoad([
     'name' => 'Deepak Uniyal',
-    'email' => 'uniyaldeepak49@gmail.com',
+    'email' => 'spamwelcomedhere@gmail.com',
     'url' => 'https://github.com/uniyaldeepak49/http-client'
 ]);
 
