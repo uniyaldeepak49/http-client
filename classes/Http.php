@@ -2,6 +2,10 @@
 
 namespace HttpClient;
 
+ini_set("display_errors", 0);
+
+use Exception;
+
 class Http
 {
     /**
@@ -142,12 +146,16 @@ class Http
 
     public function makeRequest()
     {
-        $context = stream_context_create($this->getOptions());
-        file_get_contents($this->getUrl(), false, $context);
-        $this->response_headers = $http_response_header;
+        try {
+            $context = stream_context_create($this->getOptions());
+            file_get_contents($this->getUrl(), false, $context);
+            $this->response_headers = $http_response_header;
+        } catch (Exception $ex) {
+            throw new Exception("Error");
+        }
     }
     /**
-     * method to get response code
+     * Method to get response code
      */
 
     public function getCode()
@@ -156,7 +164,22 @@ class Http
         return $explode[1];
     }
 
-    public function getResponseHeaders(){
+    /**
+     * Method to ger Nessage
+     */
+
+    public function getMessage()
+    {
+        $explode = explode(" ", $this->response_headers[0]);
+        return $explode[2];
+    }
+
+    /**
+     * Method to get response headers
+     */
+
+    public function getResponseHeaders()
+    {
         return $this->response_headers;
     }
 }

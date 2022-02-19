@@ -23,7 +23,5 @@ $httpObj->setHeaders([
 
 $httpObj->setOptions();
 $httpObj->makeRequest();
-var_dump($httpObj->getResponseHeaders());
-echo '<pre>';
-print_r($httpObj->getResponseHeaders());
-echo '</pre>';
+echo "Status Code = " . $httpObj->getCode() . nl2br('<br>');
+echo "Message = " . $httpObj->getMessage();
