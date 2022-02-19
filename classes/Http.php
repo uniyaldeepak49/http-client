@@ -2,8 +2,6 @@
 
 namespace HttpClient;
 
-ini_set("display_errors", 0);
-
 use Exception;
 
 class Http
