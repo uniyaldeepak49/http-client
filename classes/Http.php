@@ -69,14 +69,13 @@ class Http
     }
 
     /**
-     * Method to get request method 
+     * Method to get request method
      */
 
     public function getRequestMethod()
     {
         return $this->requestMethod;
     }
-
 
     /**
      * Method to set Headers
@@ -121,11 +120,11 @@ class Http
     public function setOptions()
     {
         $this->options = [
-            'http' => [
-                'header' => $this->getHeaders(),
-                'method' => $this->getRequestMethod(),
-                'content' => $this->getPayLoad()
-            ]
+            "http" => [
+                "header" => $this->getHeaders(),
+                "method" => $this->getRequestMethod(),
+                "content" => $this->getPayLoad(),
+            ],
         ];
     }
 
